@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Day PL Percent</title>
+</head>
+<body>
+	<h3>New Balance</h3>
+	<input type="text" id="newBalance" onkeyup="myFunction()">
+	<h3>Dollar Profit</h3>
+	<input type="text" id="dollarProfit" onkeyup="myFunction()">
+
+	<br/><br/><br/>
+	<div id="output"></div>
+	
+	<script type="text/javascript">
+	function myFunction() {
+		var newBalance = document.getElementById('newBalance').value;
+		var dollarProfit = document.getElementById('dollarProfit').value;
+		var previousBalance = newBalance - dollarProfit;
+		var dayPerc = (newBalance / previousBalance - 1) * 100;
+		dayPerc = dayPerc.toFixed(2)
+		dayPerc = dayPerc + '%'
+		var output = document.getElementById('output');
+
+
+
+		output.innerHTML = dayPerc;
+	}	
+	</script>
+</body>
+</html>
